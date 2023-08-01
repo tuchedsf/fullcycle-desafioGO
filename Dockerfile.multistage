@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1
+
+FROM golang:1.20-alpine AS build-stage
+
+WORKDIR /app
+
+# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
+COPY go.mod ./
+
+COPY *.go .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o hello hello.go
+
+
+## GO PROD
+FROM alpine:latest AS prod
+
+WORKDIR /
+
+COPY --from=build-stage /app/hello ./
+
+EXPOSE 8080
+
+ENTRYPOINT ["/hello"]
