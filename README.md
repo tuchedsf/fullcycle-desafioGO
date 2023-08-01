@@ -1,1 +1,11 @@
-# fullcycle-desafioGO
+# fullcycle-desafio1 - DOCKER-GO
+
+
+
+Link imagem no dockerhub:
+
+https://hub.docker.com/r/tuchedsf/fullcycle
+
+
+
+obs.: UTILIZANDO AS ULTIMAS VERSÕES DO GO, O MINIMO QUE CONSEGUI FORAM 8.56MB GOSTARIA QUE VERIFICASSEM O QUE MAIS PODERIA SER FEITO PARA CHEGAR AOS 2MB, OU É DEVIDO A QUANDO GRAVARAM AS IMAGENS DO GO AINDA ERAM MAIS "LEVES".
